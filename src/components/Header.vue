@@ -13,14 +13,14 @@
                     <CloseOutlined :style="{fontSize: '30px'}"/>
                 </div>
                 <li class="li-root relative">
-                    <router-link to="/">Việc làm</router-link>
+                    <router-link to="/">Jobs</router-link>
                     <ul class="child-list absolute rounded bg-white shadow-lg min-w-[300px] px-[10px] py-[10px]">
                         <router-link to="/">
                             <li class="li-widget px-[10px] text-green-400 mb-3 py-[10px] rounded text-[14px] font-medium flex items-center justify-between gap-5">
                                 <div class="flex items-center gap-5">
                                     <SearchOutlined :style="{fontSize: '20px'}"/>
                                     <span class="li-text text-white">
-                                        Tìm công việc 
+                                        Find Jobs 
                                     </span>
                                 </div>
                                 <div class="arrow-right">
@@ -33,7 +33,7 @@
                                 <div class="flex items-center gap-5">
                                     <HistoryOutlined :style="{fontSize: '20px'}"/>
                                     <span class="li-text text-white">
-                                        Việc làm đã ứng tuyển
+                                        Job applied
                                     </span>
                                 </div>
                                 <div class="arrow-right">
@@ -46,7 +46,7 @@
                                 <div class="flex items-center gap-5">
                                     <HeartOutlined :style="{fontSize: '20px'}"/>
                                     <span class="li-text text-white">
-                                        Việc làm đã lưu
+                                        Favorite job
                                     </span>
                                 </div>
                                 <div class="arrow-right">
@@ -57,14 +57,14 @@
                     </ul>
                 </li>
                 <li v-if="userStore?.isLogged === true" class="li-root relative">
-                    <router-link to="/cv-management">Hồ sơ & CV</router-link>
+                    <router-link to="/cv-management">Profile and CV</router-link>
                     <ul class="child-list absolute rounded bg-white shadow-lg min-w-[300px] px-[10px] py-[10px] max-md:hidden">
                         <router-link to="/cv-management">
                             <li class="li-widget px-[10px] text-green-400 py-[10px] rounded text-[14px] font-medium flex items-center justify-between gap-5">
                                 <div class="flex items-center gap-5">
                                     <ProfileOutlined :style="{fontSize: '20px'}"/>
                                     <span class="li-text text-white">
-                                        Quản lý CV
+                                        CV management
                                     </span>
                                 </div>
                                 <div class="arrow-right">
@@ -77,7 +77,7 @@
                                 <div class="flex items-center gap-5">
                                     <ProfileOutlined :style="{fontSize: '20px'}"/>
                                     <span class="li-text text-white">
-                                    Tạo CV
+                                    Create CV
                                     </span>
                                 </div>
                                 <div class="arrow-right">
@@ -88,7 +88,7 @@
                     </ul>
                 </li>
                 <li class="li-root relative">
-                    <router-link to="/company">Công ty</router-link>
+                    <router-link to="/company">Companies</router-link>
                     <!-- <ul class="child-list absolute rounded bg-white shadow-lg min-w-[300px] px-[10px] py-[10px]">
                         <li class="li-widget px-[10px] text-green-400 mb-3 py-[10px] rounded text-[14px] font-medium flex items-center justify-between gap-5">
                             <div class="flex items-center gap-5">
@@ -115,7 +115,10 @@
                     </ul> -->
                 </li>
                 <li class="li-root">
-                    <router-link to="/about">Về chúng tôi</router-link>
+                    <router-link to="/about">About Us</router-link>
+                </li>
+                <li class="li-root">
+                    <router-link to="/about">Resume Summary</router-link>
                 </li>
                 <!-- <li class="li-root">
                     <router-link to="/blog">Tin tức</router-link>
@@ -160,7 +163,7 @@
                                 @click="goProfile"
                             >
                                 <ProfileOutlined :style="{fontSize: '20px', color: 'green', marginRight: '5px'}"/>
-                                Trang cá nhân
+                                Profile
                             </button>
                             </MenuItem>
                         </div>
@@ -174,7 +177,7 @@
                                 @click="goSettingRecommend"
                             >
                                 <SettingOutlined :style="{fontSize: '20px', color: 'green', marginRight: '5px'}"/>
-                                Cài đặt gợi ý việc làm
+                               Setting recommend jobs
                             </button>
                             </MenuItem>
                         </div>
@@ -188,7 +191,7 @@
                                 @click="goChangePasswordPage"
                             >
                                 <SyncOutlined :style="{fontSize: '20px', color: 'green', marginRight: '5px'}"/>
-                                Đổi mật khẩu
+                                Change password
                             </button>
                             </MenuItem>
                         </div>
@@ -202,7 +205,7 @@
                                     @click="handleLogout(useUserStore.accessToken)"
                                 >
                                     <LogoutOutlined :style="{fontSize: '20px', color: 'green', marginRight: '5px'}"/>
-                                    Đăng xuất
+                                    Logout
                                 </button>
                                 </MenuItem>
                             </div>
@@ -215,8 +218,8 @@
                 </div>
             </div>
             <div v-else class="flex items-center gap-5">
-                <button class="bg-blue-500 text-white font-semibold text-[14px] px-[10px] py-[5px] rounded" @click="goLoginBusiness">Đăng tuyển</button>
-                <button class="bg-green-500 text-white font-semibold text-[14px] px-[10px] py-[5px] rounded" @click="goLoginPage">Đăng nhập</button>
+                <button class="bg-blue-500 text-white font-semibold text-[14px] px-[10px] py-[5px] rounded" @click="goLoginBusiness">Post a Job</button>
+                <button class="bg-green-500 text-white font-semibold text-[14px] px-[10px] py-[5px] rounded" @click="goLoginPage">Login</button>
             </div>
         </div>
     </header>

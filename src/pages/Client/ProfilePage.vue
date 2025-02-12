@@ -1,27 +1,27 @@
 <template lang="">
     <div class="max-w-[1300px] mx-auto mt-[150px] flex gap-5 max-md:flex-col-reverse max-sm:px-[20px]">
         <div class="w-[60%] max-md:w-full shadow p-[20px] rounded-xl">
-            <h3 class="font-semibold text-[20px]">Cài đặt thông tin cá nhân</h3>
+            <h3 class="font-semibold text-[20px]">Personal information settings</h3>
             <form action="" class="flex flex-col gap-4 mt-5" @submit.prevent="handleSubmit">
                 <div class="flex flex-col gap-1">
-                    <label for="" class="text-[14px] font-medium">Họ và tên <RedTick/></label>
-                    <input type="text" v-model="profileRef.name" placeholder="Nhập họ và tên" class="px-[10px] py-[5px] outline-none rounded border">
+                    <label for="" class="text-[14px] font-medium">Full name <RedTick/></label>
+                    <input type="text" v-model="profileRef.name" placeholder="Enter fullname" class="px-[10px] py-[5px] outline-none rounded border">
                 </div>
                 <div class="flex flex-col gap-1">
-                    <label for="" class="text-[14px] font-medium">Ngày sinh <RedTick/></label>
+                    <label for="" class="text-[14px] font-medium">Birthday <RedTick/></label>
                     <input type="date" v-model="profileRef.birthday" class="px-[10px] py-[5px] outline-none rounded border">
                 </div>
                 <div class="flex flex-col gap-1">
-                    <label for="" class="text-[14px] font-medium">Địa chỉ <RedTick/></label>
+                    <label for="" class="text-[14px] font-medium">Address <RedTick/></label>
                     <input type="text" v-model="profileRef.address" placeholder="Nhập địa chỉ" class="px-[10px] py-[5px] outline-none rounded border">
                 </div>
                 <div class="flex flex-col gap-1">
-                    <label for="" class="text-[14px] font-medium">Số điện thoại <RedTick/></label>
-                    <input type="text" v-model="profileRef.phone" placeholder="Nhập số điện thoại" class="px-[10px] py-[5px] outline-none rounded border">
+                    <label for="" class="text-[14px] font-medium">Phone number <RedTick/></label>
+                    <input type="text" v-model="profileRef.phone" placeholder="Enter phone number" class="px-[10px] py-[5px] outline-none rounded border">
                 </div>
                 <div class="flex flex-col gap-1">
                     <label for="" class="text-[14px] font-medium">Email</label>
-                    <input type="email" v-model="profileRef.email" :disabled="true" placeholder="Nhập email" class="px-[10px] py-[5px] outline-none rounded border">
+                    <input type="email" v-model="profileRef.email" :disabled="true" placeholder="Enter email" class="px-[10px] py-[5px] outline-none rounded border">
                 </div>
                 <button type="submit" class="text-white font-semibold px-[10px] py-[5px] rounded bg-green-500">Xác nhận</button>
             </form>
@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div>
-                    <p class="text-gray-500">Chào bạn trở lại,</p>
+                    <p class="text-gray-500">Welcome back,</p>
                     <p class="font-medium">{{profileRef.name}}</p>
                 </div>
             </div>

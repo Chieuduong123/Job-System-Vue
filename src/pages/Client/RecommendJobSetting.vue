@@ -1,30 +1,30 @@
 <template lang="">
     <div class="mt-[150px]">
-        <h1 class="font-semibold text-[24px] text-center">Cài đặt gợi ý việc làm</h1>
+        <h1 class="font-semibold text-[24px] text-center">Setting Job Suggestions</h1>
         <div class="flex justify-center " >
             <form action="" class="flex flex-col gap-5 px-[20px] pt-[40px] pb-[20px] rounded shadow" @submit.prevent="handleSubmit">
                 <div class="flex items-center justify-between gap-5">
                     <div class="flex flex-col gap-1 w-full">
-                        <label for="" class="text-[13px] font-medium">Tên vị trí <RedTick/></label>
-                        <input type="text" v-model="recommendRef.position" placeholder="Nhập tên vị trí" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
+                        <label for="" class="text-[13px] font-medium">Positon <RedTick/></label>
+                        <input type="text" v-model="recommendRef.position" placeholder="Enter position" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
                     </div>
                 </div>
                 <div class="flex items-center justify-between gap-5">
                     <div class="flex flex-col gap-1 w-full">
-                        <label for="" class="text-[13px] font-medium">Mức lương <RedTick/></label>
-                        <input type="number" v-model="recommendRef.salary" placeholder="Nhập số lượng tuyển" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
+                        <label for="" class="text-[13px] font-medium">Rank salary <RedTick/></label>
+                        <input type="number" v-model="recommendRef.salary" placeholder="Enter salary" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
                     </div>
                     <div class="flex flex-col gap-1 w-full">
-                        <label for="" class="text-[13px] font-medium">Địa điểm <RedTick/></label>
+                        <label for="" class="text-[13px] font-medium">Locaton <RedTick/></label>
                         <select name="" id="" v-model="recommendRef.location" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
-                        <option value="" >Chọn địa điểm làm việc</option>
+                        <option value="" >Choose Location</option>
                             <option :value="province.name" v-for="province in dataLocation" :key="province.id">{{province.name}}</option>
                         </select>                    
                     </div>
                 </div>
                 <div class="flex items-center justify-between gap-5">
                     <div class="flex flex-col gap-1 w-full">
-                        <label for="" class="text-[13px] font-medium">Loại công việc <RedTick/></label>
+                        <label for="" class="text-[13px] font-medium">Job type <RedTick/></label>
                         <a-select
                             v-model:value="recommendRef.type"
                             mode="tags"
@@ -40,22 +40,22 @@
                         v-model:value="recommendRef.level"
                         mode="tags"
                         style="width: 100%"
-                        placeholder="Chọn level"
+                        placeholder="Choose level"
                         :options="optionLevel"
 
                     ></a-select>
                 </div>
                 <div class="flex flex-col gap-1">
-                    <label for="" class="text-[13px] font-medium">Kỹ năng <RedTick/></label>
+                    <label for="" class="text-[13px] font-medium">Skills <RedTick/></label>
                     <a-select
                         v-model:value="recommendRef.skill"
                         mode="tags"
                         style="width: 100%"
-                        placeholder="Chọn kỹ năng phù hợp"
+                        placeholder="Choose suitable skill"
                         :options="optionSkills"
                     ></a-select>
                 </div>
-                <button type="submit" class="bg-green-500 rounded font-medium text-[#fff] px-[10px] py-[5px] text-[15px]" >Cập nhật</button>
+                <button type="submit" class="bg-green-500 rounded font-medium text-[#fff] px-[10px] py-[5px] text-[15px]" >Update</button>
             </form>
         </div>
     </div>

@@ -26,7 +26,7 @@
                 <a :href="postData?.business?.website" target="_blank" class="font-semibold">{{postData?.business?.website}}</a>
             </div>
             <div>
-                <p class="">Địa chỉ công ty:</p>
+                <p class="">Address:</p>
                 <p class="font-semibold">{{postData?.business?.location}}</p>
             </div>
             <button class="bg-green-500 text-white text-[14px] font-semibold px-[15px] py-[10px] rounded" @click="goDetailCompany(postData?.business?.id)">Xem thêm</button>
@@ -96,7 +96,7 @@
                 <div>
                     <h2 class="text-[24px] font-medium">Kỹ năng</h2>
                     <p class="mt-3 text-gray-500">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem nostrum dolores accusamus a vero consequuntur dolorum, autem repellat quaerat architecto officia quos animi? Ipsum aperiam delectus consectetur labore, nesciunt voluptatem!
+                        <!-- Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem nostrum dolores accusamus a vero consequuntur dolorum, autem repellat quaerat architecto officia quos animi? Ipsum aperiam delectus consectetur labore, nesciunt voluptatem! -->
                     </p>
                     <div class="mt-5 flex flex-wrap gap-3 px-[20px]">
                         <div class="px-[15px] py-[5px] bg-green-100 text-green-600 font-semibold rounded" v-for="(skill, index) in postData?.skill" :key="index" >
@@ -140,7 +140,7 @@ import { fetchPostByIdBusiness } from "../../api/postApi";
         if(userStore.isLogged === true && userStore.accessToken) {
             isApply.value = !isApply.value
         }else {
-            toast.warning("Vui lòng đăng nhập trước khi ứng tuyển")
+            toast.warning("Please Login before applying")
         }
     }
 

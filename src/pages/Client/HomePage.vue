@@ -4,7 +4,7 @@
         <HomeBanner/>
         <!-- Top công ty -->
         <div class="max-w-[1300px] mx-auto mt-5 border-b max-xl:px-[50px] max-md:px-[20px]">
-            <h2 class="font-semibold text-[23px] max-sm:text-center">Công ty nổi bật</h2>
+            <h2 class="font-semibold text-[23px] max-sm:text-center">Featured companies</h2>
             <div class="mt-10 pb-5 w-full">
                 <swiper
                     :modules="modules"
@@ -29,7 +29,7 @@
         </div>
         <!-- JoB -->
         <div class="max-w-[1300px] mx-auto mt-[50px] max-xl:px-[50px]">
-            <h2 class="font-semibold text-[23px] mb-[20px] max-sm:text-center">Công việc nổi bật</h2>
+            <h2 class="font-semibold text-[23px] mb-[20px] max-sm:text-center">Featured Jobs</h2>
             <div class="grid grid-cols-3 gap-5 max-sm:grid-cols-1 max-xl:grid-cols-2">
                 <PostVue v-for="post in TopPostPagination" :key="post?.id" :post="post"/>
             </div>
@@ -43,7 +43,7 @@
         </div>
         <!-- Suggest job -->
         <div v-if="userStore?.recommend && userStore?.accessToken" class="max-w-[1300px] mx-auto mt-[50px] max-xl:px-[50px]">
-            <h2 class="font-semibold text-[23px] mb-[20px] max-sm:text-center">Dành cho bạn</h2>
+            <h2 class="font-semibold text-[23px] mb-[20px] max-sm:text-center">Maybe you like</h2>
             <swiper
                 :modules="modules"
                 :slides-per-view="3"
@@ -60,7 +60,7 @@
         </div>
         <!-- New Job -->
         <div class="max-w-[1300px] mx-auto mt-[50px] max-xl:px-[50px]">
-            <h2 class="font-semibold text-[23px] mb-[20px] max-sm:text-center">Công việc mới nhất</h2>
+            <h2 class="font-semibold text-[23px] mb-[20px] max-sm:text-center">Lastest Jobs</h2>
             <div class="grid grid-cols-3 gap-5 max-sm:grid-cols-1 max-xl:grid-cols-2">
                 <PostVue v-for="post in PostPagination" :key="post?.id" :post="post"/>
             </div>
@@ -71,8 +71,8 @@
         <!-- Why us -->
         <div class="h-screen max-w-[1300px] mx-auto flex items-center max-xl:px-[50px] max-sm:flex-col max-sm:mt-[50px]">
             <div class="flex-1 flex flex-col gap-5">
-                <h3 class="font-normal text-gray-50px0 text-[18px] max-sm:text-center">Tại sao lại là chúng tôi</h3>
-                <p class="font-bold text-[30px]  max-sm:text-center"><span class="text-green-500">Juong Job. </span>Nơi tìm kiếm cơ hội.</p>
+                <h3 class="font-normal text-gray-50px0 text-[18px] max-sm:text-center">Why Us?</h3>
+                <p class="font-bold text-[30px]  max-sm:text-center"><span class="text-green-500">Juong Job. </span>Where to find opportunities.</p>
                 <p class="max-sm:text-center">
                     Phosfluorescently develop empowered communit rather than front-end networks. Competently formula revolut infrastructures with hi standards.
                 </p>

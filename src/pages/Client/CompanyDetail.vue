@@ -23,15 +23,15 @@
        <div class="flex gap-5 mt-[20px] max-md:flex-col-reverse">
             <div class="w-[70%] max-md:w-full shadow-sm rounded-xl overflow-hidden pb-[20px]">
                 <div class="h-[50px] flex items-center px-[20px] bg-green-500">
-                    <h3 class="font-semibold text-white text-[20px]">Tuyển dụng</h3>
+                    <h3 class="font-semibold text-white text-[20px]">Recruiment</h3>
                 </div>
                 <div class="h-full">
                     <div class="flex items-center justify-center gap-5 py-[20px]">
                         <div class="flex items-center gap-2 px-[10px] py-[10px] bg-white rounded-md border">
                             <SearchOutlined :style="{fontSize: '20px', color: '#9BA4B5'}"/>
-                            <input type="text" v-model="searchTemp" placeholder="Vị trí tuyển dụng" class="outline-none text-[15px] w-[300px]">
+                            <input type="text" v-model="searchTemp" placeholder="Position" class="outline-none text-[15px] w-[300px]">
                         </div>
-                        <button class="px-[15px] py-[10px] bg-green-500 text-white rounded-md font-semibold" @click="handleSearch">Tìm kiếm</button>
+                        <button class="px-[15px] py-[10px] bg-green-500 text-white rounded-md font-semibold" @click="handleSearch">Search</button>
                     </div>
                     <div v-if="jobCompany?.length > 0" class="flex flex-col justify-between h-[85%]">
                         <div class="flex flex-col gap-5 px-[20px]">
@@ -41,16 +41,16 @@
                             <Pagination :pageArray="pageArray" :currentPage="currentPage" :goToPage="goToPage"/>
                         </div>
                     </div>
-                    <h1 v-else class="px-[20px] text-center">Chưa có vị trí nào</h1>
+                    <h1 v-else class="px-[20px] text-center">There are no positions yet</h1>
                 </div>
             </div>
             <div class="w-[30%] max-md:w-full shadow rounded-xl overflow-hidden pb-5 h-max">
                 <div class="h-[50px] flex items-center px-[20px] bg-green-500">
-                    <h3 class="font-semibold text-white text-[20px]">Thông tin liên hệ</h3>
+                    <h3 class="font-semibold text-white text-[20px]">Information contact</h3>
                 </div>
                 <div class="p-[20px] flex flex-col gap-5">
                     <div class="flex flex-col gap-2 pb-5 border-b">
-                        <p class="font-semibold flex items-center gap-1"><EnvironmentOutlined :style="{fontSize: '20px', color: '#9BA4B5'}"/> Địa chỉ công ty</p>
+                        <p class="font-semibold flex items-center gap-1"><EnvironmentOutlined :style="{fontSize: '20px', color: '#9BA4B5'}"/> Address</p>
                         <p class="text-[14px]">{{companyData?.location}}</p>
                     </div>
                     <div class="flex flex-col gap-2 pb-5 border-b">
@@ -58,11 +58,11 @@
                         <p class="text-[14px]">{{companyData?.email}}</p>
                     </div>
                     <div class="flex flex-col gap-2 pb-5 border-b">
-                        <p class="font-semibold flex items-center gap-1"><PhoneOutlined :style="{fontSize: '20px', color: '#9BA4B5'}"/> Số điện thoại</p>
+                        <p class="font-semibold flex items-center gap-1"><PhoneOutlined :style="{fontSize: '20px', color: '#9BA4B5'}"/> Phone number</p>
                         <p class="text-[14px]">{{companyData?.phone}}</p>
                     </div>
                     <div class="flex flex-col gap-2 pb-5 border-b">
-                        <p class="font-semibold flex items-center gap-1"><SolutionOutlined :style="{fontSize: '20px', color: '#9BA4B5'}"/> Giới thiệu</p>
+                        <p class="font-semibold flex items-center gap-1"><SolutionOutlined :style="{fontSize: '20px', color: '#9BA4B5'}"/> Introduction</p>
                         <p class="text-[14px]">{{companyData?.career}}</p>
                     </div>
                     <div class="flex flex-col gap-5">

@@ -5,35 +5,35 @@
         </div>
         <div class="relative flex items-center justify-center w-[60%] max-md:w-[100%]">
             <div class="absolute top-[70px] left-[150px]">
-                <p class="text-[16px] font-medium text-gray-500">Chào mừng đến với</p>
+                <p class="text-[16px] font-medium text-gray-500">Welcome to</p>
                 <h1 class="font-bold text-[25px] text-green-500">Juong Job.</h1>
             </div>
             <div class="w-[300px] flex flex-col items-center">
-                <h3 class="font-semibold text-[20px] mb-[30px]">Đăng ký</h3>
+                <h3 class="font-semibold text-[20px] mb-[30px]">Register</h3>
                 <form action="" class="flex flex-col items-center gap-5 w-[100%]" @submit.prevent="handleRegister">
                     <div class="flex flex-col gap-1 w-[100%] rounded">
-                        <label for="" class="text-[14px] font-semibold">Họ và tên</label>
-                        <input type="text" v-model="userData.name" placeholder="Nhập họ và tên" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                        <label for="" class="text-[14px] font-semibold">Fullname</label>
+                        <input type="text" v-model="userData.name" placeholder="Enter fullname" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                     </div>
                     <div class="flex flex-col gap-1 w-[100%] rounded">
-                        <label for="" class="text-[14px] font-semibold">Số điện thoại</label>
-                        <input type="text" v-model="userData.phone" placeholder="Nhập số điện thoại" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                        <label for="" class="text-[14px] font-semibold">Phone number</label>
+                        <input type="text" v-model="userData.phone" placeholder="Enter phone number" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                     </div>
                     <div class="flex flex-col gap-1 w-[100%] rounded">
                         <label for="" class="text-[14px] font-semibold">Email</label>
-                        <input type="text" v-model="userData.email" placeholder="Nhập email" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                        <input type="text" v-model="userData.email" placeholder="Enter email" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                     </div>
                     <div class="flex flex-col gap-1 w-[100%] rounded">
-                        <label for="" class="text-[14px] font-semibold">Mật Khẩu</label>
+                        <label for="" class="text-[14px] font-semibold">Password</label>
                         <div class="border-[1px]">
-                            <input :type="isShow ? 'text' : 'password'" v-model="userData.password" placeholder="Nhập password" class="outline-none text-[13px] px-[10px] py-[7px] w-[90%]">
+                            <input :type="isShow ? 'text' : 'password'" v-model="userData.password" placeholder="Enter password" class="outline-none text-[13px] px-[10px] py-[7px] w-[90%]">
                             <EyeOutlined v-if="!isShow" :style="{cursor: 'pointer'}" @click="handleToggleShowPassword"/>
                             <EyeInvisibleOutlined v-if="isShow" :style="{cursor: 'pointer'}" @click="handleToggleShowPassword"/>
                         </div>
                     </div>
-                    <button :type="submit" class="text-[16px] font-medium px-[40px] py-[10px] text-white bg-green-500 rounded " >Đăng ký</button>
+                    <button :type="submit" class="text-[16px] font-medium px-[40px] py-[10px] text-white bg-green-500 rounded " >Register</button>
                 </form>
-                <p class="font-normal text-[13px] mt-5">Tôi đã có tài khoản? <span class="text-green-500 cursor-pointer" @click="goLoginPage">Đăng nhập</span></p>
+                <p class="font-normal text-[13px] mt-5">Tôi đã có tài khoản? <span class="text-green-500 cursor-pointer" @click="goLoginPage">Login</span></p>
             </div>
         </div>
         <Loading v-if="userStore.isLoading"/>
@@ -68,9 +68,9 @@
 
     const handleRegister = async () => {
         if (!userData.value.name || !userData.value.phone || !userData.value.email || !userData.value.password) {
-            toast.warning("Vui lòng nhập đầy đủ thông tin!");
+            toast.warning("Please enter complete information!");
         } else if (!isValidEmail(userData.value.email)) {
-            toast.warning("Email không hợp lệ!");
+            toast.warning("Invalid Email!");
         } else if (userData.value.password.length < 8) {
             toast.warning("Mật khẩu phải chứa ít nhất 8 ký tự!");
         } else if (userData.value.phone.length < 10 || userData.value.phone.length > 10) {

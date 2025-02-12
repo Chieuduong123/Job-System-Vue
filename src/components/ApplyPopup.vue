@@ -4,28 +4,28 @@
         </div>
         <div class="w-[700px] fixed top-[50%] translate-y-[-50%] z-50 left-[50%] translate-x-[-50%] bg-white rounded-xl p-[20px]">
             <div class="h-[50px] border-b flex items-center justify-between">
-                <h2 class="text-[16px] font-semibold">Bạn đang ứng tuyển vị trí <span class="text-green-500">{{job?.position}}</span> tại {{job?.business?.name}}</h2>
+                <h2 class="text-[16px] font-semibold">You are applying for a position <span class="text-green-500">{{job?.position}}</span> tại {{job?.business?.name}}</h2>
                 <CloseOutlined :style="{fontSize: '20px', cursor: 'pointer'}" @click="toggle"/>
             </div>
             <form action="" class="flex flex-col gap-5 mt-5">
                 <div class="flex flex-col gap-2">
-                    <label for="" class="text-[14px] font-medium">Họ và tên</label>
-                    <input type="text" v-model="applyRef.name" placeholder="Nhập họ và tên" class="px-[10px] py-[5px] outline-none border rounded">
+                    <label for="" class="text-[14px] font-medium">Full name</label>
+                    <input type="text" v-model="applyRef.name" placeholder="Enter fullname" class="px-[10px] py-[5px] outline-none border rounded">
                 </div>
                 <div class="flex flex-col gap-2">
                     <label for="" class="text-[14px] font-medium">Email</label>
-                    <input type="text" v-model="applyRef.email" placeholder="Nhập email" class="px-[10px] py-[5px] outline-none border rounded">
+                    <input type="text" v-model="applyRef.email" placeholder="Enter email" class="px-[10px] py-[5px] outline-none border rounded">
                 </div>
                 <div class="flex flex-col gap-2">
-                    <label for="" class="text-[14px] font-medium">Số điện thoại</label>
-                    <input type="text" v-model="applyRef.phone" placeholder="Nhập số điện thoại" class="px-[10px] py-[5px] outline-none border rounded">
+                    <label for="" class="text-[14px] font-medium">Phone number</label>
+                    <input type="text" v-model="applyRef.phone" placeholder="Enter phone number" class="px-[10px] py-[5px] outline-none border rounded">
                 </div>
                 <div class="flex flex-col gap-2">
-                    <label for="" class="text-[14px] font-medium">CV của bạn <span class="text-red-500 text-[10px]">(pdf)</span></label>
+                    <label for="" class="text-[14px] font-medium">Your CV<span class="text-red-500 text-[10px]">(pdf)</span></label>
                     <input type="file"  class="px-[10px] py-[5px] outline-none border rounded" @change="handleChangeFile">
                 </div>
                 <div class="flex flex-col gap-2">
-                    <label for="" class="text-[14px] font-medium">Thông tin thêm</label>
+                    <label for="" class="text-[14px] font-medium">More information</label>
                     <textarea placeholder="Thông tin thêm" v-model="applyRef.cover_letter" name="" id="" cols="30" rows="5" class="px-[10px] py-[5px] outline-none border rounded"></textarea>
                 </div>
                 <div class="flex items-center gap-5 justify-end">

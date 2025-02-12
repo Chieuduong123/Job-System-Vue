@@ -6,19 +6,19 @@
                 <h1 class="font-bold text-[25px] text-green-500">Juong Job.</h1>
             </div>
             <div class="w-[300px] flex flex-col items-center">
-                <h3 class="font-semibold text-[20px] mb-[30px]">Đăng nhập doanh nghiệp</h3>
+                <h3 class="font-semibold text-[20px] mb-[30px]">Login doanh nghiệp</h3>
                 <form action="" class="flex flex-col items-center gap-5 w-full" @submit.prevent="handleLogin">
                     <div class="flex flex-col gap-1 w-[100%] rounded">
                         <label for="" class="text-[14px] font-semibold">Email</label>
-                        <input type="email" v-model="businessData.email" placeholder="Nhập Email" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                        <input type="email" v-model="businessData.email" placeholder="Enter email" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                     </div>
                     <div class="flex flex-col gap-1 w-[100%] rounded">
                         <label for="" class="text-[14px] font-semibold">Password</label>
-                        <input type="password" v-model="businessData.password" placeholder="Nhập Password" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                        <input type="password" v-model="businessData.password" placeholder="Enter password" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                     </div>
-                    <button :type="submit" class="text-[16px] font-medium px-[40px] py-[10px] text-white bg-green-500 rounded ">Đăng nhập</button>
+                    <button :type="submit" class="text-[16px] font-medium px-[40px] py-[10px] text-white bg-green-500 rounded ">Login</button>
                 </form>
-                <p class="font-normal text-[13px] mt-5">Tôi chưa có tài khoản ? <span class="text-green-500 cursor-pointer" @click="goRegisterBusinessPage">Đăng ký</span></p>
+                <p class="font-normal text-[13px] mt-5">Tôi chưa có tài khoản ? <span class="text-green-500 cursor-pointer" @click="goRegisterBusinessPage">Register</span></p>
             </div>
         </div>
         <div class="w-[40%] flex items-center justify-center max-md:hidden">
@@ -43,9 +43,9 @@ import { useToast } from 'vue-toastification';
 
     const handleLogin = async () => {
         if (!businessData.value.email || !businessData.value.password) {
-            toast.warning("Vui lòng nhập đầy đủ thông tin!");
+            toast.warning("Please enter complete information!");
         } else if (!isValidEmail(businessData.value.email)) {
-            toast.warning("Email không hợp lệ!");
+            toast.warning("Invalid Email!");
         } else {
             await businessStore.actLoginBusiness(businessData.value)
             console.log(businessStore.isLoggedBusiness);

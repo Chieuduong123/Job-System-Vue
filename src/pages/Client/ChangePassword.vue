@@ -1,10 +1,10 @@
 <template lang="">
     <div class="max-w-[1300px] flex justify-center mx-auto mt-[150px] ">
         <div class="w-[700px] bg-white shadow rounded-xl p-[20px]">
-            <h1 class="font-semibold text-[20px] mb-[20px]">Thay đổi mật khẩu đăng nhập</h1>
+            <h1 class="font-semibold text-[20px] mb-[20px]">Thay đổi mật khẩu Login</h1>
             <form action=""  class="flex flex-col gap-5">
                 <div class="flex flex-col gap-2">
-                    <label for="" class="text-[14px] font-medium">Email đăng nhập</label>
+                    <label for="" class="text-[14px] font-medium">Email Login</label>
                     <input type="email" disabled class="outline-none px-[10px] py-[5px] rounded border">
                 </div>
                 <div class="flex flex-col gap-2">

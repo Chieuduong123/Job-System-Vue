@@ -9,7 +9,7 @@
                 <h1 class="font-bold text-[25px] text-green-500">Juong Job.</h1>
             </div>
             <div class="w-[300px] flex flex-col items-center">
-                <h3 class="font-semibold text-[20px] mb-[30px]">Đăng ký doanh nghiệp</h3>
+                <h3 class="font-semibold text-[20px] mb-[30px]">Register doanh nghiệp</h3>
                 <form action="" class="flex flex-col items-center gap-5 w-max" @submit.prevent="handleRegister">
                     <div class="flex gap-3">
                         <div class="flex flex-col gap-1 w-[100%] rounded">
@@ -18,13 +18,13 @@
                         </div>
                         <div class="flex flex-col gap-1 w-[100%] rounded">
                             <label for="" class="text-[14px] font-semibold">Số điện thoại</label>
-                            <input type="text" v-model="businessData.phone" placeholder="Nhập số điện thoại" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                            <input type="text" v-model="businessData.phone" placeholder="Enter phone number" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                         </div>
                     </div>
                     <!-- <div class="flex flex-col gap-1 w-[100%] rounded">
                         <label for="" class="text-[14px] font-semibold">Logo</label>
                         <div class="w-full">
-                            <input type="file" id="file-logo" placeholder="Nhập họ và tên" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px] w-full">
+                            <input type="file" id="file-logo" placeholder="Enter fullname" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px] w-full">
                             <label for="file-logo"></label>
                         </div>
                     </div> -->
@@ -35,11 +35,11 @@
                     <div class="flex items-center gap-3">
                         <div class="flex flex-col gap-1 w-[100%] rounded">
                             <label for="" class="text-[14px] font-semibold">Email</label>
-                            <input type="email" v-model="businessData.email" placeholder="Nhập email" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                            <input type="email" v-model="businessData.email" placeholder="Enter email" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                         </div>
                         <div class="flex flex-col gap-1 w-[100%] rounded">
                             <label for="" class="text-[14px] font-semibold">Địa chỉ</label>
-                            <input type="text" v-model="businessData.location" placeholder="Nhập địa chỉ công ty" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                            <input type="text" v-model="businessData.location" placeholder="Nhập Address" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                         </div>
                     </div>
                     <div class="flex items-center gap-3">
@@ -54,11 +54,11 @@
                     </div>
                     <div class="flex flex-col gap-1 w-[100%] rounded">
                         <label for="" class="text-[14px] font-semibold">Password</label>
-                        <input type="password" v-model="businessData.password" placeholder="Nhập password" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                        <input type="password" v-model="businessData.password" placeholder="Enter password" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                     </div>
-                    <button :type="submit" class="text-[16px] font-medium px-[40px] py-[10px] text-white bg-green-500 rounded ">Đăng ký</button>
+                    <button :type="submit" class="text-[16px] font-medium px-[40px] py-[10px] text-white bg-green-500 rounded ">Register</button>
                 </form>
-                <p class="font-normal text-[13px] mt-5">Tôi đã có tài khoản ? <span class="text-green-500 cursor-pointer" @click="goLoginBusinessPage">Đăng nhập</span></p>
+                <p class="font-normal text-[13px] mt-5">Tôi đã có tài khoản ? <span class="text-green-500 cursor-pointer" @click="goLoginBusinessPage">Login</span></p>
             </div>
         </div>
     </div>
@@ -86,9 +86,9 @@ import { useToast } from 'vue-toastification';
 
     const handleRegister = async() => {
         if (!businessData.value.name || !businessData.value.phone || !businessData.value.email || !businessData.value.password || !businessData.value.location || !businessData.value.website || !businessData.value.career || !businessData.value.size) {
-            toast.warning("Vui lòng nhập đầy đủ thông tin!");
+            toast.warning("Please enter complete information!");
         } else if (!isValidEmail(businessData.value.email)) {
-            toast.warning("Email không hợp lệ!");
+            toast.warning("Invalid Email!");
         } else if (businessData.value.password.length < 8) {
             toast.warning("Mật khẩu phải chứa ít nhất 8 ký tự!");
         } else if (businessData.value.phone.length < 10 || businessData.value.phone.length > 10) {

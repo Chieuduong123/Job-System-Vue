@@ -9,17 +9,17 @@
                     </div>
                     <div class="flex flex-col gap-1 w-[100%] rounded">
                         <label for="" class="text-[14px] font-semibold">Số điện thoại</label>
-                        <input type="text" v-model="businessProfile.phone" placeholder="Nhập số điện thoại" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                        <input type="text" v-model="businessProfile.phone" placeholder="Enter phone number" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
                     <div class="flex flex-col gap-1 w-[100%] rounded">
                         <label for="" class="text-[14px] font-semibold">Email</label>
-                        <input type="email" v-model="businessProfile.email" disabled placeholder="Nhập email" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                        <input type="email" v-model="businessProfile.email" disabled placeholder="Enter email" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                     </div>
                     <div class="flex flex-col gap-1 w-[100%] rounded">
                         <label for="" class="text-[14px] font-semibold">Địa chỉ</label>
-                        <input type="text" v-model="businessProfile.location" placeholder="Nhập địa chỉ công ty" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
+                        <input type="text" v-model="businessProfile.location" placeholder="Nhập Address" class="outline-none text-[13px] px-[10px] py-[7px] border-[1px]">
                     </div>
                 </div>
                 <div class="flex items-center gap-3">

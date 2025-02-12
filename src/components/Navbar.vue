@@ -34,7 +34,7 @@
                         ]"
                         @click="goProfile"
                     >
-                        Trang cá nhân
+                        Profile
                     </button>
                     </MenuItem>
                 </div>
@@ -47,7 +47,7 @@
                         ]"
                         @click="goChangePasswordPage"
                     >
-                        Đổi mật khẩu
+                        Change password
                     </button>
                     </MenuItem>
                 </div>
@@ -60,7 +60,7 @@
                             ]"
                             @click="handleLogoutBusiness(businessStore?.accessToken)"
                         >
-                            Đăng xuất
+                           Logout
                         </button>
                         </MenuItem>
                     </div>

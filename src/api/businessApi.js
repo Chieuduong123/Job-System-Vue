@@ -5,7 +5,7 @@ const toast = useToast();
 export const fetchRegisterBusiness = async (payload) => {
   try {
     const data = await axios.post(`${BASE_URL}business/register`, payload);
-    toast.success("Đăng ký thành công, vui lòng đợi admin duyệt");
+    toast.success("Register successfull, vui lòng đợi admin duyệt");
     return data;
   } catch (error) {
     console.log(error);
@@ -15,11 +15,11 @@ export const fetchRegisterBusiness = async (payload) => {
 export const fetchLoginBusiness = async (business) => {
   try {
     const data = await axios.post(`${BASE_URL}business/login`, business);
-    toast.success("Đăng nhập thành công");
+    toast.success("Login successfull");
     return data;
   } catch (error) {
     if (error.response.status === 401 || 422) {
-      toast.warning("Tài khoản hoặc mật khẩu không chính xác");
+      toast.warning("Account or password is incorrect");
     }
     console.log(error);
   }
@@ -45,7 +45,7 @@ export const fetchLogoutBusiness = async (token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    toast.success("Đăng xuất thành công");
+    toast.success("Logout successfull");
     return data;
   } catch (error) {
     console.log(error);
@@ -81,7 +81,7 @@ export const fetchUpdateBusiness = async (profile, token) => {
         "Content-Type": "multipart/form-data",
       },
     });
-    toast.success("Cập nhật thông tin thành công");
+    toast.success("Update information successfull");
     return data;
   } catch (error) {
     console.log(error);

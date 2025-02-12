@@ -11,7 +11,7 @@
             <div class="rounded-full w-[20px] h-[20px] flex items-center justify-center bg-green-500">
                 <StarFilled :style="{fontSize: '11px', color: '#fff'}"/>
             </div>
-            <p class="text-[14px]">Đang tuyển dụng <span class="text-green-500 font-semibold">{{ quantityJob}}</span> vị trí</p>
+            <p class="text-[14px]">Recruiting <span class="text-green-500 font-semibold">{{ quantityJob}}</span> vị trí</p>
         </div>
         <div class="flex items-start gap-3">
             <div class="rounded-full w-[20px] h-[20px] flex items-center justify-center bg-green-500">

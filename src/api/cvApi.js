@@ -10,7 +10,7 @@ export const fetchCreateCV = async (cv, token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    toast.success("Đã lưu");
+    toast.success("Saved");
     return data;
   } catch (error) {
     console.log(error);
@@ -49,7 +49,7 @@ export const fetchDeleteCV = async (id, token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    toast.success("Xoá thành công");
+    toast.success("Delete successfull");
     return data;
   } catch (error) {
     console.log(error);
@@ -63,7 +63,7 @@ export const fetchUpdateCV = async (id, payload, token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    toast.success("Đã lưu");
+    toast.success("Saved");
     return data;
   } catch (error) {
     console.log(error);

@@ -6,12 +6,12 @@
             <button class="absolute right-[10px] top-[10px]" @click="onToggleCreate"><CloseOutlined :style="{fontSize: '25px'}" /></button>
             <div class="flex items-center justify-between gap-5">
                 <div class="flex flex-col gap-1 w-full">
-                    <label for="" class="text-[13px] font-medium">Tên vị trí <RedTick/></label>
-                    <input type="text" v-model="postData.position" placeholder="Nhập tên vị trí" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
+                    <label for="" class="text-[13px] font-medium">Position<RedTick/></label>
+                    <input type="text" v-model="postData.position" placeholder="Enter position" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
                 </div>
                 <div class="flex flex-col gap-1 w-full">
-                    <label for="" class="text-[13px] font-medium">Số lượng tuyển <RedTick/></label>
-                    <input type="number" v-model="postData.quantity" placeholder="Nhập số lượng tuyển" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
+                    <label for="" class="text-[13px] font-medium">Number of recruits <RedTick/></label>
+                    <input type="number" v-model="postData.quantity" placeholder=" Enter Number of recruits" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
                 </div>
             </div>
             <div class="flex items-center justify-between gap-5">
@@ -21,55 +21,55 @@
                         v-model:value="postData.level"
                         mode="tags"
                         style="width: 100%"
-                        placeholder="Chọn level"
+                        placeholder="Choose level"
                         :options="optionLevel"
 
                     ></a-select>
                 </div>
                 <div class="flex flex-col gap-1 w-full">
-                    <label for="" class="text-[13px] font-medium">Mức lương <RedTick/></label>
-                    <input type="number" v-model="postData.salary" placeholder="Nhập số lượng tuyển" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
+                    <label for="" class="text-[13px] font-medium">Rank Salary <RedTick/></label>
+                    <input type="number" v-model="postData.salary" placeholder="Enter salary" class="border rounded px-[10px] py-[5px] text-[14px] outline-none">
                 </div>
             </div>
             <div class="flex items-center justify-between gap-5">
                 <div class="flex flex-col gap-1 w-full">
-                    <label for="" class="text-[13px] font-medium">Thời gian tuyển dụng <RedTick/></label>
+                    <label for="" class="text-[13px] font-medium">Recruitment time <RedTick/></label>
                     <a-space direction="vertical" :size="12">
                         <a-range-picker v-model:value="value1" />
                     </a-space>
                 </div>
                 <div class="flex flex-col gap-1 w-full">
-                    <label for="" class="text-[13px] font-medium">Loại công việc <RedTick/></label>
+                    <label for="" class="text-[13px] font-medium">Job type <RedTick/></label>
                     <a-select
                         v-model:value="postData.type"
                         mode="tags"
                         style="width: 100%"
-                        placeholder="Chọn kỹ năng phù hợp"
+                        placeholder="Choose suitable job types"
                         :options="optionTypeJob"
 
                     ></a-select>
                 </div>
             </div>
             <div class="flex flex-col gap-1">
-                <label for="" class="text-[13px] font-medium">Mô tả công việc <RedTick/></label>
+                <label for="" class="text-[13px] font-medium">Job description<RedTick/></label>
                 <ckeditor :editor="editor" v-model="postData.content" ></ckeditor>
             </div>
             <div class="flex flex-col gap-1">
-                <label for="" class="text-[13px] font-medium">Yêu cầu <RedTick/></label>
+                <label for="" class="text-[13px] font-medium">Requirement<RedTick/></label>
                 <ckeditor :editor="editor" v-model="postData.requirement" ></ckeditor>            
             </div>
             <div class="flex flex-col gap-1">
-                <label for="" class="text-[13px] font-medium">Kỹ năng <RedTick/></label>
+                <label for="" class="text-[13px] font-medium">Skills<RedTick/></label>
                 <a-select
                     v-model:value="postData.skill"
                     mode="tags"
                     style="width: 100%"
-                    placeholder="Chọn kỹ năng phù hợp"
+                    placeholder="Choose suitable skill"
                     :options="optionSkills"
                 ></a-select>
             </div>
             <div class="flex flex-col gap-1">
-                <label for="" class="text-[13px] font-medium">Quyền lợi <RedTick/></label>
+                <label for="" class="text-[13px] font-medium">Benefits <RedTick/></label>
                 <ckeditor :editor="editor" v-model="postData.benefits" ></ckeditor>
             </div>
             <button  class="bg-green-500 rounded font-medium text-[#fff] px-[10px] py-[5px] text-[15px]" @click.prevent="onCLick">Submit</button>
@@ -112,7 +112,7 @@ import { useBusinessStore } from "../stores/businessStore";
     
     const onCLick = () => {
         if(!postData.value.position || !postData.value.quantity || !postData.value.level || !postData.value.type || !postData.value.skill || !postData.value.salary || !postData.value.content || !postData.value.requirement || !postData.value.benefits || !value1.value) {
-            toast.warning("Vui lòng nhập đủ thông tin")
+            toast.warning("Please enter enough information")
         }else {
             let start = `${value1?.value[0]?.$y}-${value1?.value[0]?.$M+1}-${value1?.value[0]?.$D}`
             let end = `${value1?.value[1]?.$y}-${value1?.value[1]?.$M+1}-${value1?.value[1]?.$D}`

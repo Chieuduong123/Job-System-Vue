@@ -6,10 +6,10 @@ const toast = useToast();
 export const fetchRegister = async (payload) => {
   try {
     const data = await axios.post(`${BASE_URL}seeker/register`, payload);
-    toast.success("Đăng ký thành công");
+    toast.success("Register successfull");
     return data;
   } catch (error) {
-    toast.warning("Email này đã tồn tại");
+    toast.warning("This email already exists");
     console.log(error);
   }
 };
@@ -17,11 +17,11 @@ export const fetchRegister = async (payload) => {
 export const fetchLogin = async (user) => {
   try {
     const data = await axios.post(`${BASE_URL}seeker/login`, user);
-    toast.success("Đăng nhập thành công");
+    toast.success("Login successfull");
     return data;
   } catch (error) {
     if (error.response.status === 401) {
-      toast.warning("Tài khoản hoặc mật khẩu không chính xác");
+      toast.warning("Account or password is incorrect");
     }
     console.log(error);
   }
@@ -47,7 +47,7 @@ export const fetchLogout = async (token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    toast.success("Đăng xuất thành công");
+    toast.success("Logout successfull");
     return data;
   } catch (error) {
     console.log(error);
@@ -66,7 +66,7 @@ export const fetchEditProfile = async (profile, token) => {
       },
       credentials: "same-origin",
     });
-    toast.success("Cập nhận thông tin thành công");
+    toast.success("Update information successfull");
     return data;
   } catch (error) {
     console.log(error);
@@ -91,7 +91,7 @@ export const fetchCreateRecommend = async (payload, token) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    toast.success("Cập nhật thành công");
+    toast.success("Update successfull");
     return data;
   } catch (error) {
     console.log(error);
@@ -108,7 +108,7 @@ export const fetchUpdateRecommend = async (idRecommend, payload, token) => {
         },
       }
     );
-    toast.success("Cập nhật thành công");
+    toast.success("Update successfull");
     return data;
   } catch (error) {
     console.log(error);
@@ -131,7 +131,7 @@ export const fetchGetPostRecommend = async (token) => {
 export const fetchForgotPassword = async (email) => {
   try {
     const data = await axios.post(`${BASE_URL}password/email`, email);
-    toast.success("Vui lòng kiểm tra email của bạn!");
+    toast.success("Please check your email!");
     return data;
   } catch (error) {
     console.log(error);

@@ -18,9 +18,9 @@
                 </div>
             </div>
             <div class="flex items-center justify-between max-sm:flex-col max-sm:items-start max-sm:mt-5">
-                <p class="font-medium text-[18px] mb-0">${{job?.salary}}<span class="text-[14px] font-normal">/Tháng</span></p>
+                <p class="font-medium text-[18px] mb-0">${{job?.salary}}<span class="text-[14px] font-normal">/Month</span></p>
                 <div class="flex items-center gap-2">
-                    <button class="px-[10px] py-[5px] rounded bg-green-200 text-green-600">Ứng tuyển</button>
+                    <button class="px-[10px] py-[5px] rounded bg-green-200 text-green-600">Apply</button>
                     <div class="w-[35px] h-[35px] rounded flex justify-center items-center bg-green-200 cursor-pointer" @click="handleAddFavorite($event, job?.id)">
                         <HeartOutlined :style="{fontSize: '14px', color: '#fff'}"/>
                     </div>
@@ -55,7 +55,7 @@ import { IMAGE_URL } from "../constants/url";
         if(userStore.accessToken) {
             postStore.actAddFavorite(id, userStore.accessToken)
         }else {
-            toast.warning("Vui lòng đăng nhập")
+            toast.warning("Vui lòng Login")
         };
     }
 </script>

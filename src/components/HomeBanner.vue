@@ -1,7 +1,7 @@
 <template lang="">
     <div class="min-h-[70vh] bg-green-300 py-[20px] max-xl:px-[20px]">
-        <h1 class="font-bold text-[25px] text-center">Tìm việc làm nhanh 24h, việc làm mới nhất trên toàn quốc.</h1>
-        <p class="text-[14px] text-center text-gray-500">Tiếp cận 40,000+ tin tuyển dụng việc làm mỗi ngày từ hàng nghìn doanh nghiệp uy tín tại Việt Nam</p>
+        <h1 class="font-bold text-[25px] text-center">Find jobs quickly 24 hours, latest jobs nationwide.</h1>
+        <p class="text-[14px] text-center text-gray-500">Access 40,000+ job recruitment postings every day from thousands of reputable businesses in Vietnam</p>
         <div class="flex items-center justify-center gap-5 mt-[20px] flex-wrap">
             <div class="flex items-center gap-5 bg-white rounded max-sm:bg-inherit max-sm:flex-col max-sm:w-full">
                 <div class="flex items-center gap-2 px-[10px] bg-white py-[10px] rounded relative before:absolute before:content-[''] before:h-[80%] before:w-[2px] before:bg-gray-500 before:right-0  max-sm:w-full">
@@ -11,7 +11,7 @@
                 <div class="flex items-center gap-2 px-[10px] rounded bg-white py-[10px]  max-sm:w-full">
                     <EnvironmentOutlined :style="{fontSize: '20px', color: '#9BA4B5'}"/>
                     <select name="" id="" v-model="provinceSelect" class="text-gray-500 outline-none max-h-[300px]">
-                        <option value="" >Tất cả tỉnh/thành phố</option>
+                        <option value="" >All provinces/cities</option>
                         <option :value="province.name" v-for="province in dataLocation" :key="province.id">{{province.name}}</option>
                     </select>
                 </div>
@@ -19,7 +19,7 @@
             <div class="flex items-center gap-2 bg-white px-[10px] py-[10px] rounded max-sm:w-full">
                 <StarOutlined :style="{fontSize: '20px', color: '#9BA4B5'}"/>
                 <select name="" id="" v-model="levelSelect" class="text-gray-500 outline-none">
-                    <option value="">Tất cả kinh nghiệm</option>
+                    <option value="">All experience</option>
                     <option value="Intern">Intern</option>
                     <option value="Fresher">Fresher</option>
                     <option value="Junior">Junior</option>
@@ -27,7 +27,7 @@
                     <option value="Senior">Senior</option>
                 </select>
             </div>
-            <button class="px-[15px] py-[10px] bg-green-500 text-white rounded font-semibold" @click="handleSearch">Tìm kiếm</button>
+            <button class="px-[15px] py-[10px] bg-green-500 text-white rounded font-semibold" @click="handleSearch">Search</button>
         </div>
         <div class="bg-white w-[70%] mx-auto mt-10 rounded-[10px] overflow-hidden">
             <swiper

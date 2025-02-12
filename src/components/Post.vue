@@ -48,8 +48,8 @@
             </div>
         </div>
         <div class="flex items-center justify-between">
-            <div class="font-medium text-[18px]">${{post?.salary}}<span class="text-[14px] font-normal">/Tháng</span></div>
-            <button v-if="isHistory === false" class="px-[10px] py-[5px] rounded bg-green-200 text-green-600">Ứng tuyển</button>
+            <div class="font-medium text-[18px]">${{post?.salary}}<span class="text-[14px] font-normal">/Month</span></div>
+            <button v-if="isHistory === false" class="px-[10px] py-[5px] rounded bg-green-200 text-green-600">Apply</button>
         </div>
     </div>
 </template>
@@ -57,10 +57,10 @@
     import {HeartOutlined, EnvironmentOutlined, ClockCircleOutlined, MoreOutlined, IdcardOutlined, AppstoreOutlined} from "@ant-design/icons-vue"
     import {defineProps} from "vue"
     import { useRouter } from "vue-router";
-import { IMAGE_URL } from "../constants/url";
-import { usePostStore } from "../stores/postStore";
-import { useUserStore } from "../stores/userStore";
-import { useToast } from "vue-toastification";
+    import { IMAGE_URL } from "../constants/url";
+    import { usePostStore } from "../stores/postStore";
+    import { useUserStore } from "../stores/userStore";
+    import { useToast } from "vue-toastification";
     const postStore = usePostStore()
     const userStore = useUserStore()
     const router = useRouter()
@@ -89,7 +89,7 @@ import { useToast } from "vue-toastification";
         if(userStore.accessToken) {
             postStore.actAddFavorite(id, userStore.accessToken)
         }else {
-            toast.warning("Vui lòng đăng nhập")
+            toast.warning("Vui lòng Login")
         };
     }
 
@@ -97,7 +97,7 @@ import { useToast } from "vue-toastification";
         if(userStore.accessToken) {
             postStore.actRemoveFavorite(id, userStore.accessToken)
         }else {
-            toast.warning("Vui lòng đăng nhập")
+            toast.warning("Vui lòng Login")
         };
     }
 

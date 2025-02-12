@@ -42,11 +42,11 @@ export const fetchCreateApply = async (idJob, apply, token) => {
         },
       }
     );
-    toast.success("Ứng tuyển thành công");
+    toast.success("Apply successfull");
     return data;
   } catch (error) {
     if (error.response.status === 403) {
-      toast.warning("Bạn đã ứng tuyển vị trí này trước đó!");
+      toast.warning("You have applied for this position before!");
     }
     console.log(error);
   }
